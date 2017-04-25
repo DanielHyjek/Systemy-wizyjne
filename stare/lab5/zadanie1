@@ -1,0 +1,12 @@
+%% Zad 1
+close all;
+clear all;
+plansza=imread('plansza.tif');
+filtr=fspecial(averange);
+plansza_conv=conv2(plansza,filtr,'same');
+plansza_conv=(uint8)plansza_conv;
+figure(1)
+subplot(1,2,1)
+imshow(plansza,[])
+subplot(1,2,2)
+imshow(plansza_conv,[])
