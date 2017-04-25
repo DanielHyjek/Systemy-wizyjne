@@ -37,7 +37,7 @@ while stoss~=0
         for y=(punkt(1,2)-1):(punkt(1,2)+1) %2 petle do sprawdzania 8 somsiadow badanego pkt
             if (visited(x,y)==0 )   %sprawdze tylko nieodwiedzanego pkt
                 miara=abs(kne(x,y)-mean);
-                if (miara<30)
+                if (miara<50)
                     n=n+1;  %zwiekszenie ilosci pkt w segmented
                     mean = (mean*(n-1)+kne(x,y))/n; %liczenie sredniej
                     segmented(x,y)=1;

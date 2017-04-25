@@ -1,0 +1,37 @@
+close all; clear all;
+
+obraz=imread('indeks1.bmp');
+size=size(obraz);
+L=1;    %liczba etykiet
+tabSkl= zeros(1,256); %iniclalizacja tablicy sklejen
+
+
+    for x=2:size(1,1)-1
+        for y=2:size(1,2)-1 %2 petle do poruszania sie po calym obrazie
+            if obraz(x,y) ~=0
+               sasiedzi= [obraz(x-1,y-1) obraz(x-1,y) obraz(x-1,y+1) obraz(x,y-1)];
+               suma = sum(sasiedzi);
+               if suma==0
+                   obraz(x,y)=L;
+                   tabSkl(1,L)=L;
+                   L=L+1;                   
+               else
+                   sasiedzi=nonzeros(sasiedzi);
+                   minimum=min(sasiedzi);
+                   maksimum=max(sasiedzi);
+                   obraz(x,y)=minimum;
+                   tabSkl(1,maksimum)=tabSkl(1,minimum);
+               end
+            end
+        end
+    end
+
+     for x=2:size(1,1)-1
+        for y=2:size(1,2)-1 %2 petle do poruszania sie po calym obrazie
+            if obraz(x,y) ~=0
+                obraz(x,y)=tabSkl(1,obraz(x,y));
+            end
+        end
+     end
+
+    imshow(obraz,[]);
