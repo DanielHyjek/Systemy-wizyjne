@@ -1,20 +1,24 @@
-%% Obrqaz coins
+%%%%%%%%%%%%%   Binaryzacja na podstawie histogramu    %%%%%%%%%%
+%   im2bw(obraz,prog) - binearyzacja obrazu na podstawie progu
+%   To samo dla roznych obrazow
+
+%% Obraz coins
 close all;
 clear all;
 
 coins=imread('coins.png');
 figure (1)
-subplot(2,1,1)
+subplot(3,1,1)
 imshow(coins);
 title('oryginal')
-subplot(2,1,2)
+subplot(3,1,2)
 imhist(coins);
 title('histogram')
 
-figure(2)
+subplot(3,1,3)
 bin=im2bw(coins,(80/255));
 imshow(bin);
-title('prÃ³g 80')
+title('próg 80')
 
 %% Rozne obrazy z szumami
 close all;
@@ -113,23 +117,23 @@ bin3=im2bw(coins,level3/255);
 bin4=im2bw(coins,128/255);
 
 figure(1)
-subplot(3,3,1)
+subplot(2,3,1)
 imshow(coins)
 title('oryginal')
-subplot(3,3,2)
+subplot(2,3,2)
 imhist(coins)
 title('histogram')
-subplot(3,3,3)
+subplot(2,3,3)
 imshow(bin1)
 title([num2str(level1*255), 'Otsu'])
 
-subplot(3,3,4)
+subplot(2,3,4)
 imshow(bin2)
 title([num2str(level2),'Kittler'])
-subplot(3,3,5)
+subplot(2,3,5)
 imshow(bin3)
 title([num2str(level3),'Yen'])
-subplot(3,3,6)
+subplot(2,3,6)
 imshow(bin4)
 title('Wlasny 128')
 
@@ -148,23 +152,23 @@ bin3=im2bw(coins,level3/255);
 bin4=im2bw(coins,150/255);
 
 figure(1)
-subplot(3,3,1)
+subplot(2,3,1)
 imshow(coins)
 title('oryginal')
-subplot(3,3,2)
+subplot(2,3,2)
 imhist(coins)
 title('histogram')
-subplot(3,3,3)
+subplot(2,3,3)
 imshow(bin1)
 title([num2str(level1*255), 'Otsu'])
 
-subplot(3,3,4)
+subplot(2,3,4)
 imshow(bin2)
 title([num2str(level2),'Kittler'])
-subplot(3,3,5)
+subplot(2,3,5)
 imshow(bin3)
 title([num2str(level3),'Yen'])
-subplot(3,3,6)
+subplot(2,3,6)
 imshow(bin4)
 title('Wlasny 150')
 
@@ -182,23 +186,23 @@ bin3=im2bw(coins,level3/255);
 bin4=im2bw(coins,170/255);
 
 figure(1)
-subplot(3,3,1)
+subplot(2,3,1)
 imshow(coins)
 title('oryginal')
-subplot(3,3,2)
+subplot(2,3,2)
 imhist(coins)
 title('histogram')
-subplot(3,3,3)
+subplot(2,3,3)
 imshow(bin1)
 title([num2str(level1*255), 'Otsu'])
 
-subplot(3,3,4)
+subplot(2,3,4)
 imshow(bin2)
 title([num2str(level2),'Kittler'])
-subplot(3,3,5)
+subplot(2,3,5)
 imshow(bin3)
 title([num2str(level3),'Yen'])
-subplot(3,3,6)
+subplot(2,3,6)
 imshow(bin4)
 title('Wlasny 170')
 %% KATALOG
@@ -215,22 +219,22 @@ bin3=im2bw(coins,level3/255);
 bin4=im2bw(coins,140/255);
 
 figure(1)
-subplot(3,3,1)
+subplot(2,3,1)
 imshow(coins)
 title('oryginal')
-subplot(3,3,2)
+subplot(2,3,2)
 imhist(coins)
 title('histogram')
-subplot(3,3,3)
+subplot(2,3,3)
 imshow(bin1)
 title([num2str(level1*255), 'Otsu'])
 
-subplot(3,3,4)
+subplot(2,3,4)
 imshow(bin2)
 title([num2str(level2),'Kittler'])
-subplot(3,3,5)
+subplot(2,3,5)
 imshow(bin3)
 title([num2str(level3),'Yen'])
-subplot(3,3,6)
+subplot(2,3,6)
 imshow(bin4)
 title('Wlasny 140')
