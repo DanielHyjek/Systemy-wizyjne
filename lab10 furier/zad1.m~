@@ -1,0 +1,19 @@
+close all, clear all;
+
+obraz=imread('dwieFale.bmp');
+Y=fft2(obraz);
+Z=fftshift(Y);
+A=log10(abs(Y)+1);
+F = angle(Y.*(A>0.0001));
+
+
+
+subplot(3,1,1)
+imshow(obraz)
+subplot(3,1,2)
+imshow(
+
+
+
+imshow(obraz,[])
+
