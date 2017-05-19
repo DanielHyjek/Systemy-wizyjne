@@ -106,11 +106,11 @@ Y=fftshift(Y);
 A=log10(abs(Y)+1);
 F = angle(Y.*(A>0.0001));
 
-Hd = ones(512);
-h = fwind1(Hd,hanning(21)); %- tworzenie filtra 2D
-[H f1 f2] = freqz2(h,512,512); %- wyznaczanie odpowiedzi filtra
-figure
-mesh(f1,f2,H);
+
+h = fwind1(Hd,chebwin(250)); %- tworzenie filtra 2D
+[H, f1, f2] = freqz2(h,512,512); %- wyznaczanie odpowiedzi filtra
+
+
 
 Y=Y.*H;        %filtracja
 Y=ifftshift(Y);
@@ -122,4 +122,4 @@ imshow(obraz)
 title('oryginal')
 subplot(1,2,2)
 imshow(Y,[])
-title('obraz po filtracji górnoprzepustowej')
+title('obraz po wyostrzeniu')
