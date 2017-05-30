@@ -1,0 +1,41 @@
+close all, clear all;
+
+obraz=imread('ferrari.bmp');
+figure
+subplot(3,2,1)
+imshow(obraz)
+title('Oryginal')
+subplot(3,2,2)
+erozja=imerode(obraz,strel('square', 3));
+imshow(erozja)
+title('Obraz po erozji - kwadrat')
+subplot(3,2,3)
+dylatacja=imdilate(obraz,strel('square', 3));
+imshow(dylatacja)
+title('Obraz po dylatacji')
+subplot(3,2,4)
+imshow(dylatacja-erozja)
+title('gradient morfologiczny')
+subplot(3,2,5)
+imshow(imopen(obraz,strel('square', 3)))
+title('Obraz po otwarciu')
+subplot(3,2,6)
+imshow(imclose(obraz,strel('square', 3)))
+title('Sam napis po zamknieciu')
+
+%%%%% TOP HAT
+imtophat, imbothat
+SE=strel('square', 3);
+figure
+subplot(2,2,1)
+imshow(obraz)
+title('Oryginal')
+subplot(2,2,2)
+imshow(imtophat(obraz,SE))
+title('Obraz po scienianiu 1x')
+subplot(2,2,3)
+imshow(bwmorph(obraz,'thin',3))
+title('Obraz po scienianiu 3x')
+subplot(2,2,4)
+imshow(bwmorph(obraz,'thin',Inf))
+title('Obraz po scienianiu inf')

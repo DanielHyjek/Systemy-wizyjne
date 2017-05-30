@@ -1,0 +1,27 @@
+close all, clear all
+
+%%%%%%%% SCIENIANIE
+obraz=imread('fingerprint.bmp');
+figure
+subplot(2,2,1)
+imshow(obraz)
+title('Oryginal')
+subplot(2,2,2)
+imshow(bwmorph(obraz,'thin',1))
+title('Obraz po scienianiu 1x')
+subplot(2,2,3)
+imshow(bwmorph(obraz,'thin',3))
+title('Obraz po scienianiu 3x')
+subplot(2,2,4)
+imshow(bwmorph(obraz,'thin',inf))
+title('Obraz po scienianiu inf')
+
+%%%%%%%%% SZKIELETYZACJA
+obraz=imread('szkielet.bmp');
+figure
+subplot(1,2,1)
+imshow(obraz)
+title('Oryginal')
+subplot(1,2,2)
+imshow(bwmorph(obraz,'thin',1))
+title('Obraz po scienianiu 1x')
