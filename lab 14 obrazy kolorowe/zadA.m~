@@ -1,0 +1,20 @@
+close all
+clear all
+
+obraz=imread('lenaRGB.bmp');
+imshow(obraz)
+lenaR = obraz(:,:,1);
+figure
+imhist(lenaR)
+lenaG = obraz(:,:,2);
+lenaB = obraz(:,:,3);
+figure
+subplot(2,3,1)
+imshow(lenaR)
+subplot(2,
+imhist(lenaR)
+histeq
+obrazEQ = obraz;
+obrazEQ(:,:,1) = Re;
+obrazEQ(:,:,2) = Ge;
+obrazEQ(:,:,3) = Be;
