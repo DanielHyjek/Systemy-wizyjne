@@ -36,13 +36,13 @@ obrazEQ(:,:,3) = lenaB;
 obraz=rgb2hsv(obraz);
 
 lenaH = obraz(:,:,1);
-lenaH=uint8(conv2(lenaH,filtr,'same'));
+lenaH=conv2(lenaH,filtr,'same');
 
 lenaS = obraz(:,:,2);
-lenaS=uint8(conv2(lenaS,filtr,'same'));
+lenaS=conv2(lenaS,filtr,'same');
 
 lenaV = obraz(:,:,3);
-lenaV=uint8(conv2(lenaV,filtr,'same'));
+lenaV=conv2(lenaV,filtr,'same');
 
 obrazEQ2 = obraz;
 obrazEQ2(:,:,1) = lenaH;
@@ -107,13 +107,13 @@ obrazEQ(:,:,3) = lenaB;
 obraz=rgb2hsv(obraz);
 
 lenaH = obraz(:,:,1);
-lenaH==uint8(medfilt2(lenaH,[3 3]));
+lenaH=(medfilt2(lenaH,[3 3]));
 
 lenaS = obraz(:,:,2);
-lenaS==uint8(medfilt2(lenaS,[3 3]));
+lenaS=(medfilt2(lenaS,[3 3]));
 
 lenaV = obraz(:,:,3);
-lenaV==uint8(medfilt2(lenaV,[3 3]));
+lenaV=(medfilt2(lenaV,[3 3]));
 
 obrazEQ2 = obraz;
 obrazEQ2(:,:,1) = lenaH;
@@ -121,7 +121,7 @@ obrazEQ2(:,:,2) = lenaS;
 obrazEQ2(:,:,3) = lenaV;
 obrazEQ2=hsv2rgb(obrazEQ2);
 
-% Plot składowych HSV po filtracji
+%Plot składowych HSV po filtracji
 % figure
 % subplot(1,3,1)
 % imshow(lenaH,[])

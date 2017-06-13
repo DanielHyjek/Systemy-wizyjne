@@ -62,8 +62,24 @@ imhist(lenaV)
 
 
 Re=histeq(lenaH,256);
+% figure
+% subplot(1,2,1)
+% imshow(Re)
+% subplot(1,2,2)
+% imhist(Re)
 Ge=histeq(lenaS,256);
+% figure
+% subplot(1,2,1)
+% imshow(Ge)
+% subplot(1,2,2)
+% imhist(Ge)
 Be=histeq(lenaV,256);
+% figure
+% subplot(1,2,1)
+% imshow(Be)
+% subplot(1,2,2)
+% imhist(Be)
+
 obrazEQ = obraz;
 obrazEQ(:,:,1) = Re;
 obrazEQ(:,:,2) = Ge;

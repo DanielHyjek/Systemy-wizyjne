@@ -40,17 +40,17 @@ obraz=rgb2hsv(obraz);
 lenaH = obraz(:,:,1);
 kws1=(conv2(lenaH,S1,'same'));
 kws2=(conv2(lenaH,S2,'same'));
-lenaH=uint8(abs(kws1)+abs(kws2));
+lenaH=(abs(kws1)+abs(kws2));
 
 lenaS = obraz(:,:,2);
 kws1=(conv2(lenaS,S1,'same'));
 kws2=(conv2(lenaS,S2,'same'));
-lenaS=uint8(abs(kws1)+abs(kws2));
+lenaS=(abs(kws1)+abs(kws2));
 
 lenaV = obraz(:,:,3);
 kws1=(conv2(lenaV,S1,'same'));
 kws2=(conv2(lenaV,S2,'same'));
-lenaV=uint8(abs(kws1)+abs(kws2));
+lenaV=(abs(kws1)+abs(kws2));
 
 obrazEQ2 = obraz;
 obrazEQ2(:,:,1) = lenaH;
